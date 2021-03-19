@@ -1,0 +1,46 @@
+{
+  "name": "clamswap-contracts-hardhat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.1",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@openzeppelin/contracts": "^3.1.0",
+    "@openzeppelin/contracts-upgradeable": "^3.4.0",
+    "@solidity-parser/parser": "^0.10.1-rc.1",
+    "@uniswap/lib": "^1.1.2",
+    "@uniswap/v2-core": "^1.0.1",
+    "eth-sig-util": "^3.0.1",
+    "ethereum-waffle": "^3.2.1",
+    "ethers": "^5.0.24",
+    "solc": "0.5.17",
+    "truffle-flattener": "^1.5.0",
+    "web3": "^1.3.3"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-etherscan": "^2.1.1",
+    "@openzeppelin/test-environment": "^0.1.4",
+    "@openzeppelin/test-helpers": "^0.5.4",
+    "chai": "^4.2.0",
+    "cross-var": "^1.1.0",
+    "dotenv": "^8.2.0",
+    "dotenv-cli": "^4.0.0",
+    "ganache-cli": "^6.12.2",
+    "hardhat": "^2.0.11",
+    "mocha": "^7.0.0",
+    "truffle-plugin-verify": "^0.5.4"
+  },
+  "scripts": {
+    "compile": "hardhat compile && hardhat run scripts/transformArtifactFilesForTests.js",
+    "ganache:fork": "dotenv -- cross-var ganache-cli --fork https://bsc-dataseed.binance.org/ -e 10000000000 --mnemonic \"%MNEMONIC%\"",
+    "deploy:fork": "hardhat run --network mainnetFork scripts/deploy.js",
+    "deploy:bscTestnet": "hardhat run --network bscTestnet scripts/deploy.js",
+    "deploy:bscMainnet": "hardhat run --network bscMainnet scripts/deploy.js",
+    "test": "npm run compile && hardhat test test/*.test.js",
+    "clean": "hardhat clean",
+    "flatten": "bash scripts/flatten.sh"
+  }
+}
