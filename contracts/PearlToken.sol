@@ -6,7 +6,7 @@ import "./libs/BEP20.sol";
 import "./ClamToken.sol";
 
 // PEARL with Governance.
-contract Pearl is BEP20("PEARL Token", "PEARL") {
+contract PearlToken is BEP20("PEARL Token", "PEARL") {
     /// @notice Creates `_amount` token to `_to`. Must only be called by the owner (MasterChef).
     function mint(address _to, uint256 _amount) public onlyOwner {
         _mint(_to, _amount);

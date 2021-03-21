@@ -9,7 +9,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 
 import "./ClamToken.sol";
-import "./Pearl.sol";
+import "./PearlToken.sol";
 
 // MasterChef is the master of Pearls. He can make Pearls and he is a fair guy.
 //
@@ -49,7 +49,7 @@ contract MasterChef is Ownable, ReentrancyGuard {
     }
 
     ClamToken public clam;
-    Pearl public pearl; // this is rewarded
+    PearlToken public pearl; // this is rewarded
 
     // Dev address.
     address public devaddr;
@@ -82,7 +82,7 @@ contract MasterChef is Ownable, ReentrancyGuard {
 
     constructor(
         ClamToken _clam,
-        Pearl _pearl,
+        PearlToken _pearl,
         address _devaddr,
         address _feeAddress,
         uint256 _pearlPerBlock,
