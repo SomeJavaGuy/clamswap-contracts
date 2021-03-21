@@ -118,7 +118,7 @@ contract ClamBase is Ownable {
     {
         require(
             treasuryPearlGenerationPercentage <= 100,
-            "CryptoAlpaca: invalid breeding percentage - must be between 0 and 100"
+            "ClamNFT: invalid pearl generation percentage - must be between 0 and 100"
         );
         treasuryPearlGenerationPercentage = _treasuryPearlGenerationPercentage;
     }
