@@ -78,7 +78,7 @@ contract MasterChef is Ownable, ReentrancyGuard {
     );
     event SetFeeAddress(address indexed user, address indexed newAddress);
     event SetDevAddress(address indexed user, address indexed newAddress);
-    event UpdateEmissionRate(address indexed user, uint256 goosePerBlock);
+    event UpdateEmissionRate(address indexed user, uint256 pearlPerBlock);
 
     constructor(
         ClamToken _clam,
