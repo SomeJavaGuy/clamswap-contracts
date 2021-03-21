@@ -103,7 +103,7 @@ contract ClamBase is Ownable {
     /* ========== OWNER MUTATIVE FUNCTION ========== */
 
     /**
-     * @param _treasuryAddress dev address
+     * @param _treasuryAddress treasury address
      */
     function setTreasuryAddress(address _treasuryAddress) external onlyTreasury {
         treasuryAddress = _treasuryAddress;
