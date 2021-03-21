@@ -19,7 +19,7 @@ contract ClamCore is ClamNftToken, ReentrancyGuard {
      * @param _treasuryAddress treasury address.
      */
     constructor(
-        IERC20 _pearl,
+        PearlToken _pearl,
         address _treasuryAddress
     ) public {
         pearl = _pearl;

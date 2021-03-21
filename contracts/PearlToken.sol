@@ -17,6 +17,10 @@ contract PearlToken is BEP20("PEARL Token", "PEARL") {
         _burn(_from, _amount);
         _moveDelegates(_delegates[_from], address(0), _amount);
     }
+    
+    function burn(uint256 _amount) public {
+        _burn(msg.sender, _amount);
+    }
 
     // The CLAM TOKEN!
     ClamToken public clam;

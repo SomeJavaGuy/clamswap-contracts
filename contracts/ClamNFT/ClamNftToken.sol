@@ -40,8 +40,11 @@ contract ClamNftToken is ClamBase, ERC1155("") {
      */
     function createClam(uint256 _traits, address _owner)
         external
-        onlyOwner
     {
+        pearl.transferFrom(msg.sender, address(this), 500e18);
+        pearl.burn(450e18);
+        pearl.transfer(treasuryAddress, 50e18);
+
         address clamOwner = _owner;
         if (clamOwner == address(0)) {
             clamOwner = owner();

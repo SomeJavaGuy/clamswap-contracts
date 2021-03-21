@@ -8,6 +8,8 @@ import "@openzeppelin/contracts/token/ERC1155/IERC1155.sol";
 import "@openzeppelin/contracts/utils/EnumerableMap.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
+import "../PearlToken.sol";
+
 contract ClamBase is Ownable {
     using SafeMath for uint256;
     using EnumerableMap for EnumerableMap.UintToAddressMap;
@@ -35,7 +37,7 @@ contract ClamBase is Ownable {
     /**
      * @dev $PEARL ERC20 contract address
      */
-    IERC20 public pearl;
+    PearlToken public pearl;
     
     /**
      * @dev PEARL NFT ERC1155 contract address
@@ -148,7 +150,7 @@ contract ClamBase is Ownable {
     /**
      * @dev owner can update $PEARL erc20 token location
      */
-    function setPearlContract(IERC20 _pearl) external onlyOwner {
+    function setPearlContract(PearlToken _pearl) external onlyOwner {
         pearl = _pearl;
     }
     
